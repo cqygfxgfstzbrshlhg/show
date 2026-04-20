@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 基础知识练习</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 20px auto; padding: 20px; }
+        h1 { color: #2c3e50; }
+        .result { margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript 基础知识练习</h1>
+    <div class="result">
+        <h3>1. 变量定义与类型</h3>
+        <p>打开浏览器控制台（F12）查看输出结果。</p>
+    </div>
+
+    <script>
+        // ========== 1. 变量定义与类型 ==========
+        // 基本类型
+        let username = "前端练习"; // 字符串
+        const age = 20; // 数字（常量）
+        let isStudent = true; // 布尔值
+        let score = null; // 空值
+        let address; // 未定义
+
+        // 引用类型
+        let userInfo = {
+            id: 101,
+            major: "传播学",
+            hobbies: ["编程", "阅读", "摄影"]
+        };
+        let tags = ["js", "html", "git"]; // 数组
+
+        console.log("=== 变量类型检查 ===");
+        console.log("username:", username, "类型:", typeof username);
+        console.log("age:", age, "类型:", typeof age);
+        console.log("userInfo:", userInfo, "类型:", typeof userInfo);
+        console.log("tags:", tags, "类型:", typeof tags);
+
+        // ========== 2. 表达式与运算 ==========
+        let a = 15;
+        let b = 7;
+        let sum = a + b; // 加法
+        let diff = a - b; // 减法
+        let product = a * b; // 乘法
+        let quotient = a / b; // 除法
+        let remainder = a % b; // 取余
+
+        console.log("\n=== 表达式运算 ===");
+        console.log(`${a} + ${b} = ${sum}`);
+        console.log(`${a} % ${b} = ${remainder}`); // 取余结果
+
+        // ========== 3. 流程控制（if/else + 循环） ==========
+        console.log("\n=== 流程控制 ===");
+        // 条件判断
+        let testScore = 85;
+        if (testScore >= 90) {
+            console.log("成绩：优秀");
+        } else if (testScore >= 80) {
+            console.log("成绩：良好");
+        } else {
+            console.log("成绩：合格");
+        }
+
+        // 循环（遍历数组）
+        console.log("遍历爱好数组：");
+        userInfo.hobbies.forEach(hobby => {
+            console.log("- " + hobby);
+        });
+
+        // ========== 4. 函数定义与调用 ==========
+        /**
+         * 计算学生成绩等级
+         * @param {number} score - 分数
+         * @returns {string} 等级
+         */
+        function getGrade(score) {
+            if (score >= 90) return "A";
+            if (score >= 80) return "B";
+            if (score >= 70) return "C";
+            return "D";
+        }
+
+        // 调用函数
+        let finalScore = 92;
+        let grade = getGrade(finalScore);
+        console.log("\n=== 函数测试 ===");
+        console.log(`分数 ${finalScore} 对应的等级：${grade}`);
+
+        // 立即执行函数（示例）
+        (function() {
+            console.log("这是一个立即执行函数，完成作业练习！");
+        })();
+    </script>
+</body>
+</html>
